@@ -1,13 +1,13 @@
 
 document.querySelector("form").addEventListener("submit",todofun);
 
-// var tododata =parse(localStorage.getItem("mytodo"))||[];
+var tododata =JSON.parse(localStorage.getItem("mytodo")) || [];
 
-if(JSON.parse(localStorage.getItem("mytodo"))==null){
-    tododata = [];
-}else{
-    tododata = JSON.parse(localStorage.getItem("mytodo"));
-}
+// if(JSON.parse(localStorage.getItem("mytodo"))==null){
+//     tododata = [];
+// }else{
+//     tododata = JSON.parse(localStorage.getItem("mytodo"));
+// }
 
 function todofun(){
     event.preventDefault();
@@ -24,8 +24,7 @@ function todofun(){
 
     tododata.push(obj);
 
-    localStorage.setItem("mytodo",JSON.stringify(tododata));
-   
+    localStorage.setItem("mytodo",JSON.stringify(tododata));   
     
 }
 
